@@ -11,7 +11,7 @@ import SwiftUI
 struct MVVM_exampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ContentViewModel())
         }
     }
 }

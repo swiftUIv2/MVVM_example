@@ -7,15 +7,35 @@
 
 import SwiftUI
 
+
+// Views
 struct ContentView: View {
+    
+//    let alice = Person(name: "Alice", birthday: Date())
+    @StateObject var viewModel: ContentViewModel
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text(viewModel.name)
+                .padding()
+            
+            Text("\(viewModel.age)")
+                .padding()
+            
+            
+            Button("Change name"){
+                // Change the name to bob
+                viewModel.changeName("bob")
+            }
+            
+            
+        }
+        .font(.largeTitle)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ContentViewModel())
     }
 }
